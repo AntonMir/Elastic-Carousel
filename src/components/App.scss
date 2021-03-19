@@ -1,0 +1,57 @@
+.app {
+    margin: 40px;
+    border: 5px dashed red;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+.car-el {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    color: #000;
+    margin: 0 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.car-el:focus {
+    outline: none;
+}
+
+.car-el h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 25px 0 0 0;
+}
+
+.car-el p {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 25px 0 0 0;
+}
+
+.car-el a {
+    align-self: flex-start;
+    font-size: 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.car-el a:hover {
+    text-decoration: underline;
+}
+
+.rec-dot_active {
+    box-shadow: 0 0 1px 2px rgb(0 0 0 / 50%) !important;
+}
