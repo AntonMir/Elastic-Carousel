@@ -1,66 +1,74 @@
 import React from 'react';
-import Carousel from 'react-elastic-carousel'
+// carousel elements
+import Carousel, { consts } from 'react-elastic-carousel'
 import Item from "./Item";
-
+// img
 import oksanaZ from '../../assets/img/oksanaZ.jpg'
 // styles
 import './elasticCar.scss';
 
+// кол-во слайдов в зависимости от ширины вьюпорта
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 },
-  ];
+    { width: 600, itemsToShow: 2 },
+    { width: 968, itemsToShow: 3 },
+];
 
 
 export default function ElasticCar() {
 
+    // настройка формы стрелок (брать элементы юникода)
+    function myArrow({ type, onClick, isEdge }) {
+        const pointer = type === consts.PREV ? '❮' : '❯'
+        return (
+          <button onClick={onClick} disabled={isEdge} className="pointer">
+            {pointer}
+          </button>
+        )
+    }
 
     return (
-        <>
-            <h1>ElasticCar</h1>
-            <div className="elastic-car"> 
+        <Carousel 
+            renderArrow={myArrow}
+            breakPoints={breakPoints}
+        >
 
-                <Carousel 
-                    itemsToShow={1}
-                    breakPoints={breakPoints}>
-                    <Item className="car-el">
-                        <img className="logo" src={oksanaZ} alt=""/>
-                        <h1>Оксана Вячеславовна Засыпкина</h1>
-                        <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
-                        <a href="/">подробнее</a>
-                    </Item>
-                    <Item className="car-el">
-                        <img className="logo" src={oksanaZ} alt=""/>
-                        <h1>Оксана Вячеславовна Засыпкина</h1>
-                        <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
-                        <a href="/">подробнее</a>
-                    </Item>
-                    <Item className="car-el">
-                        <img className="logo" src={oksanaZ} alt=""/>
-                        <h1>Оксана Вячеславовна Засыпкина</h1>
-                        <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
-                        <a href="/">подробнее</a>
-                    </Item>
-                    <Item className="car-el">
-                        <img className="logo" src={oksanaZ} alt=""/>
-                        <h1>Оксана Вячеславовна Засыпкина</h1>
-                        <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
-                        <a href="/">подробнее</a>
-                    </Item>
-                    <Item className="car-el">
-                        <img className="logo" src={oksanaZ} alt=""/>
-                        <h1>Оксана Вячеславовна Засыпкина</h1>
-                        <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
-                        <a href="/">подробнее</a>
-                    </Item>
-                
-                    
-                </Carousel>
+            <Item className="car-el">
+                <img className="logo" src={oksanaZ} alt=""/>
+                <h1>Оксана Вячеславовна Засыпкина</h1>
+                <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
+                <a href="/">подробнее</a>
+            </Item>
 
-            </div>
-        </>
+            <Item className="car-el">
+                <img className="logo" src={oksanaZ} alt=""/>
+                <h1>Оксана Вячеславовна Засыпкина</h1>
+                <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
+                <a href="/">подробнее</a>
+            </Item>
+
+            <Item className="car-el">
+                <img className="logo" src={oksanaZ} alt=""/>
+                <h1>Оксана Вячеславовна Засыпкина</h1>
+                <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
+                <a href="/">подробнее</a>
+            </Item>
+
+            <Item className="car-el">
+                <img className="logo" src={oksanaZ} alt=""/>
+                <h1>Оксана Вячеславовна Засыпкина</h1>
+                <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
+                <a href="/">подробнее</a>
+            </Item>
+
+            <Item className="car-el">
+                <img className="logo" src={oksanaZ} alt=""/>
+                <h1>Оксана Вячеславовна Засыпкина</h1>
+                <p>Тренер по детской спортивной аэробике и по оздоровительной аэробике для взрослых и детей.</p>
+                <a href="/">подробнее</a>
+            </Item>
+                            
+        </Carousel>
     );
 }
 
